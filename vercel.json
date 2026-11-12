@@ -20,10 +20,10 @@
       "destination": "https://ayu-winter.vercel.app/ayu/:path*"
     },
     { "source": "/anaaj",
-      "destination": "https://anaaj.vercel.app/"
+      "destination": "https://anaaj-psi.vercel.app/"
     },
     { "source": "/anaaj/:path*",
-      "destination": "https://anaaj.vercel.app/:path*"
+      "destination": "https://anaaj-psi.vercel.app/:path*"
     }
   ]
 }
