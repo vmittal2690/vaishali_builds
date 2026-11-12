@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vaishali Builds</title>
+<meta name="description" content="Small apps Vaishali Mittal builds with her daughter and for herself: science lessons, the Ramayana, everyday Ayurveda and sourdough.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: the main site's skeleton (name and nav, split hero, labelled sections, a tinted band)
+   rebuilt with toy bricks and graph paper. One light look on purpose. */
+:root {
+  color-scheme: light;
+  --ground: #faf8f9;
+  --ink: #1c1a21;
+  --muted: #5a5360;
+  --line: #e2d8dd;
+  --magenta: #d61f69;
+  --magenta-text: #b0165a;
+  --paper: #f3f8ff;
+  --grid: #cfe0f5;
+  --grid-strong: #a9c6ea;
+  --red: #d8362c;
+  --yellow: #f7c600;
+  --blue: #1f63c9;
+  --green: #238a4d;
+  --card: #ffffff;
+  --sans: "Commissioner", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --pad-l: max(clamp(20px, 5vw, 72px), env(safe-area-inset-left, 0px));
+  --pad-r: max(clamp(20px, 5vw, 72px), env(safe-area-inset-right, 0px));
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+}
+a { color: inherit; }
+img { max-width: 100%; }
+a:focus-visible, .button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { text-wrap: balance; }
+
+.wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-left: var(--pad-l);
+  padding-right: var(--pad-r);
+}
+
+/* Graph paper: fine squares with a heavier line every fifth. */
+.graph {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+}
+
+/* A toy brick: a block with round studs along the top. */
+.brick {
+  --c: var(--red);
+  position: relative;
+  background: var(--c);
+  border-radius: 6px;
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.16);
+}
+.studs {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 8%;
+}
+.studs i {
+  display: block;
+  width: 26px;
+  height: 11px;
+  border-radius: 5px 5px 0 0;
+  background: var(--c);
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.28);
+}
+
+/* ---------- Header ---------- */
+.siteHeader {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 24px var(--pad-r) 24px var(--pad-l);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 32px;
+}
+.siteName {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.logo { display: flex; gap: 3px; align-items: flex-end; }
+.logo b { display: block; width: 14px; border-radius: 3px; }
+.logo b:nth-child(1) { height: 14px; background: var(--red); }
+.logo b:nth-child(2) { height: 22px; background: var(--yellow); }
+.logo b:nth-child(3) { height: 30px; background: var(--blue); }
+.siteNav { display: flex; flex-wrap: wrap; gap: 6px 26px; font-size: 15.5px; font-weight: 600; }
+.siteNav a { text-decoration: none; padding: 10px 0; }
+.siteNav a:hover { color: var(--magenta-text); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-top: clamp(32px, 5vw, 72px);
+  padding-bottom: clamp(48px, 6vw, 80px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+  align-items: center;
+}
+.heroText { flex: 999 1 520px; min-width: 0; }
+.kicker {
+  margin-bottom: 22px;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--magenta-text);
+}
+.hero h1 { font-size: clamp(39px, 5.4vw, 76px); line-height: 1.04; font-weight: 800; letter-spacing: -0.02em; }
+.underline { background: linear-gradient(var(--yellow), var(--yellow)) 0 88% / 100% 0.22em no-repeat; }
+.lead { font-size: 19px; line-height: 1.6; color: var(--muted); }
+.hero .lead { margin-top: 32px; max-width: 640px; }
+.heroActions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 26px;
+  background: var(--magenta);
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.18);
+}
+.button:hover { filter: brightness(1.08); }
+.textLink { font-size: 15.5px; font-weight: 600; color: var(--magenta-text); text-underline-offset: 6px; }
+
+.stackPanel {
+  flex: 1 1 360px;
+  min-width: 0;
+  max-width: 460px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 56px 32px 28px;
+}
+.stack { display: flex; flex-direction: column-reverse; gap: 15px; }
+.stack .brick { padding: 16px 20px 20px; color: #fff; font-weight: 700; font-size: 18px; text-decoration: none; display: block; }
+.stack .brick small { display: block; font-size: 13.5px; font-weight: 600; opacity: 0.92; }
+.stack .brick:nth-child(1) { --c: var(--blue); width: 100%; }
+.stack .brick:nth-child(2) { --c: var(--red); width: 82%; margin-left: 9%; }
+.stack .brick:nth-child(3) { --c: var(--green); width: 62%; margin-left: 4%; }
+.stack .brick:nth-child(4) { --c: var(--yellow); color: var(--ink); width: 48%; margin-left: 30%; }
+.stack .brick:hover { transform: translateY(-3px); }
+.pencil { margin-top: 22px; font-size: 14px; color: #3d5f8f; font-weight: 600; }
+
+.doubleRule { border-top: 5px double var(--magenta); }
+
+/* ---------- Sections ---------- */
+.label {
+  margin-bottom: 14px;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--magenta-text);
+}
+.sectionTitle { font-size: clamp(32px, 3.96vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; }
+section { padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); }
+.sectionIntro { max-width: 760px; }
+.sectionIntro .lead { margin-top: 20px; }
+
+.projects { margin-top: 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 56px 32px; }
+.project { display: flex; flex-direction: column; min-width: 0; }
+.project .brick { height: 22px; border-radius: 6px 6px 0 0; box-shadow: none; }
+.project:nth-child(1) .brick { --c: var(--blue); }
+.project:nth-child(2) .brick { --c: var(--red); }
+.project:nth-child(3) .brick { --c: var(--green); }
+.project:nth-child(4) .brick { --c: var(--yellow); }
+.projectBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  padding: 0 0 26px;
+}
+.shot { display: block; border-bottom: 2px solid var(--ink); aspect-ratio: 16 / 10; overflow: hidden; background: var(--paper); }
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.projectBody > :not(.shot) { margin-left: 24px; margin-right: 24px; }
+.for { font-size: 13.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.question { font-size: 21px; line-height: 1.3; font-weight: 700; }
+.project h3 { font-size: 26px; line-height: 1.15; font-weight: 800; letter-spacing: -0.01em; }
+.project p.desc { color: var(--muted); font-size: 16.5px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin-top: 0; margin-bottom: 0; }
+.tags li { font-size: 13.5px; font-weight: 600; padding: 4px 12px; border: 1.5px solid var(--line); border-radius: 20px; color: var(--muted); }
+.open { margin-top: auto; padding-top: 6px; }
+
+/* ---------- How band ---------- */
+.band { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+.steps { margin-top: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 24px; list-style: none; padding: 0; }
+.steps li { background: var(--card); border: 2px solid var(--ink); border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.steps .n {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 19px;
+  color: #fff;
+  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.18);
+}
+.steps li:nth-child(1) .n { background: var(--red); }
+.steps li:nth-child(2) .n { background: var(--yellow); color: var(--ink); }
+.steps li:nth-child(3) .n { background: var(--blue); }
+.steps li:nth-child(4) .n { background: var(--green); }
+.steps h3 { font-size: 20px; line-height: 1.2; font-weight: 800; }
+.steps p { color: var(--muted); font-size: 16px; }
+
+/* ---------- About ---------- */
+.about { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; }
+.about img { display: block; width: 240px; max-width: 100%; aspect-ratio: 1; object-fit: cover; border: 2px solid var(--ink); border-radius: 10px; }
+.aboutText { flex: 999 1 420px; min-width: 0; max-width: 720px; display: flex; flex-direction: column; gap: 18px; }
+.aboutText p:not(.label) { color: var(--muted); font-size: 18px; }
+.aboutLinks { display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 6px; }
+
+/* ---------- Footer ---------- */
+.siteFooter { border-top: 1px solid var(--line); }
+.footerInner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px var(--pad-r) 28px var(--pad-l);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 28px;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.footerInner a { margin-left: 22px; }
+.footerInner span:last-child a:first-child { margin-left: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .stack .brick { transition: transform 0.15s ease; }
+}
+</style>
+</head>
+<body>
+<header class="siteHeader">
+  <a class="siteName" href="#top">
+    <span class="logo" aria-hidden="true"><b></b><b></b><b></b></span>
+    Vaishali Builds
+  </a>
+  <nav class="siteNav" aria-label="Main">
+    <a href="#projects">Projects</a>
+    <a href="#how">How I build</a>
+    <a href="#about">About me</a>
+    <a href="https://vaishalimittal.com">vaishalimittal.com ↗</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="heroText">
+      <p class="kicker">Small apps, built at home</p>
+      <h1>Making new things approachable, <span class="underline">one brick at a time.</span></h1>
+      <p class="lead">
+        I build small apps for my daughter and for myself. Science lessons we do together, the
+        stories behind what we celebrate, Ayurveda I can finally understand, and a first
+        sourdough loaf that doesn't feel overwhelming.
+      </p>
+      <div class="heroActions">
+        <a class="button" href="#projects">See the projects</a>
+        <a class="textLink" href="#about">Who built this</a>
+      </div>
+    </div>
+    <div class="stackPanel graph">
+      <div class="stack">
+        <a class="brick" href="/wonder">
+          <span class="studs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          Riya's Wonder Lab <small>Science and numbers</small>
+        </a>
+        <a class="brick" href="/ramayana">
+          <span class="studs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          Riya's Ramayana <small>Culture and story</small>
+        </a>
+        <a class="brick" href="/ayu">
+          <span class="studs" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          Ayu <small>Everyday Ayurveda</small>
+        </a>
+        <a class="brick" href="https://anaaj.lovable.app">
+          <span class="studs" aria-hidden="true"><i></i><i></i><i></i></span>
+          Anaaj <small>Sourdough planner</small>
+        </a>
+      </div>
+      <p class="pencil">Four builds so far. Room on the paper for more.</p>
+    </div>
+  </div>
+
+  <div class="wrap" aria-hidden="true"><div class="doubleRule"></div></div>
+
+  <section class="wrap" id="projects">
+    <div class="sectionIntro">
+      <p class="label">Projects</p>
+      <h2 class="sectionTitle">Each one started with a question.</h2>
+      <p class="lead">Click into any of them. They are free, and nothing asks you to sign up.</p>
+    </div>
+
+    <div class="projects">
+      <article class="project">
+        <div class="brick"><span class="studs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="projectBody">
+          <a class="shot" href="/wonder" aria-label="Open Riya's Wonder Lab"><img src="/images/wonder.jpg" alt="Riya's Wonder Lab home screen with Space, My Body and Kitchen-table lab lessons"></a>
+          <p class="for">For my daughter</p>
+          <p class="question">How do we learn together what she's learning at school?</p>
+          <h3>Riya's Wonder Lab</h3>
+          <p class="desc">Picture-first science lessons and number games for a four-year-old. A grown-up reads, she taps and drags, and we work out the big ideas side by side.</p>
+          <ul class="tags"><li>Space</li><li>My Body</li><li>Number games</li></ul>
+          <p class="open"><a class="textLink" href="/wonder">Open the Wonder Lab ↗</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="brick"><span class="studs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="projectBody">
+          <a class="shot" href="/ramayana" aria-label="Open Riya's Ramayana"><img src="/images/ramayana.jpg" alt="Riya's Ramayana cover with the palace at Ayodhya and nine chapter buttons"></a>
+          <p class="for">For our culture</p>
+          <p class="question">She saw a Ramayana play. Now she keeps asking why.</p>
+          <h3>Riya's Ramayana</h3>
+          <p class="desc">The story of Ram, Sita, Lakshman and Hanuman in nine short picture chapters, so she knows what we celebrate and why. I read, and she taps each chapter along.</p>
+          <ul class="tags"><li>Nine chapters</li><li>Read aloud</li><li>Hindi names</li></ul>
+          <p class="open"><a class="textLink" href="/ramayana">Open the Ramayana ↗</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="brick"><span class="studs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="projectBody">
+          <a class="shot" href="/ayu" aria-label="Open Ayu"><img src="/images/ayu.jpg" alt="Ayu's Today page showing guidance for cold weather"></a>
+          <p class="for">For me</p>
+          <p class="question">My mom says ginger, lemon and cloves when we're sick. I wanted to know why.</p>
+          <h3>Ayu</h3>
+          <p class="desc">Simple Ayurveda for today's weather. A few daily practices, food for hot, cold, dry or damp days, and care for colds and skin flares.</p>
+          <ul class="tags"><li>Weather-based</li><li>Recipes</li><li>Cold &amp; flu</li></ul>
+          <p class="open"><a class="textLink" href="/ayu">Open Ayu ↗</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="brick"><span class="studs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="projectBody">
+          <a class="shot" href="https://anaaj.lovable.app" aria-label="Open Anaaj"><img src="/images/anaaj.jpg" alt="Anaaj, a sourdough companion app, asking when you are starting your bake"></a>
+          <p class="for">For the kitchen</p>
+          <p class="question">Why does a first sourdough loaf feel so hard to start?</p>
+          <h3>Anaaj</h3>
+          <p class="desc">A sourdough companion that plans your bake around when you start and how warm your kitchen is. Pick a classic loaf, a whole wheat blend, or a ragi and wheat blend, and it walks you through each step.</p>
+          <ul class="tags"><li>Bake planner</li><li>Calculator</li><li>Ragi &amp; wheat</li></ul>
+          <p class="open"><a class="textLink" href="https://anaaj.lovable.app">Open Anaaj ↗</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band graph" id="how">
+    <div class="wrap">
+      <div class="sectionIntro">
+        <p class="label">How I build</p>
+        <h2 class="sectionTitle">From a question at home to a working app.</h2>
+        <p class="lead">I'm a product person, not a full-time engineer. AI tools made the building part approachable too.</p>
+      </div>
+      <ol class="steps">
+        <li><span class="n" aria-hidden="true">1</span><h3>Start with a real question</h3><p>Something my daughter asked, or something I never understood myself.</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h3>Sketch the smallest version</h3><p>One page, plain language, pictures before words.</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h3>Build it with AI</h3><p>Codex and Claude write the code with me. I decide what it should do and how it should feel.</p></li>
+        <li><span class="n" aria-hidden="true">4</span><h3>Use it, then fix it</h3><p>We try it at home. Whatever confuses us gets rebuilt.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap" id="about">
+    <div class="about">
+      <img src="/images/vaishali.jpg" alt="Vaishali Mittal">
+      <div class="aboutText">
+        <p class="label">About me</p>
+        <h2 class="sectionTitle">Hi, I'm Vaishali.</h2>
+        <p>
+          By day I'm a healthcare product leader. I've spent 15 years taking surgical robotics,
+          clinical AI and cardiovascular devices from idea to the hospital floor.
+        </p>
+        <p>
+          At home I'm mom to a four-year-old who asks why about everything. These projects are
+          where the two meet. I build them for us first, and share them in case they help your
+          family too.
+        </p>
+        <div class="aboutLinks">
+          <a class="textLink" href="https://vaishalimittal.com">My work and writing ↗</a>
+          <a class="textLink" href="https://www.linkedin.com/in/mittalvaishali">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="siteFooter">
+  <div class="footerInner">
+    <span>© 2026 Vaishali Mittal</span>
+    <span><a href="https://vaishalimittal.com">vaishalimittal.com</a><a href="https://www.linkedin.com/in/mittalvaishali">LinkedIn</a><a href="https://github.com/vmittal2690">GitHub</a></span>
+  </div>
+</footer>
+</body>
+</html>
