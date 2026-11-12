@@ -1,29 +1,13 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/wonder",
-      "destination": "https://riyas-wonder-lab.vercel.app/"
-    },
-    { "source": "/wonder/:path*",
-      "destination": "https://riyas-wonder-lab.vercel.app/:path*"
-    },
-    { "source": "/ramayana",
-      "destination": "https://riyas-ramayana.vercel.app/"
-    },
-    { "source": "/ramayana/:path*",
-      "destination": "https://riyas-ramayana.vercel.app/:path*"
-    },
-    { "source": "/ayu",
-      "destination": "https://ayu-winter.vercel.app/ayu"
-    },
-    { "source": "/ayu/:path*",
-      "destination": "https://ayu-winter.vercel.app/ayu/:path*"
-    },
-    { "source": "/anaaj",
-      "destination": "https://anaaj-psi.vercel.app/"
-    },
-    { "source": "/anaaj/:path*",
-      "destination": "https://anaaj-psi.vercel.app/:path*"
-    }
+    { "source": "/wonder", "destination": "https://riyas-wonder-lab.vercel.app/" },
+    { "source": "/wonder/:path*", "destination": "https://riyas-wonder-lab.vercel.app/:path*" },
+    { "source": "/ramayana", "destination": "https://riyas-ramayana.vercel.app/" },
+    { "source": "/ramayana/:path*", "destination": "https://riyas-ramayana.vercel.app/:path*" },
+    { "source": "/ayu", "destination": "https://ayu-winter.vercel.app/ayu" },
+    { "source": "/ayu/:path*", "destination": "https://ayu-winter.vercel.app/ayu/:path*" },
+    { "source": "/anaaj", "destination": "https://anaaj-psi.vercel.app/" },
+    { "source": "/anaaj/:path*", "destination": "https://anaaj-psi.vercel.app/:path*" }
   ]
 }
