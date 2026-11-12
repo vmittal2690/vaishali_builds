@@ -5,6 +5,8 @@ The home page (tinkerandwander.com) for the small apps Vaishali Mittal builds wi
 - `index.html`: the whole page (no build step)
 - `images/`: app screenshots and the About photo
 - `vercel.json`: serves each app under this domain
+- `robots.txt`, `sitemap.xml`, `og.png`: search and link-sharing setup. Add new app pages to `sitemap.xml`.
+- `trailer/`: source for the 30-second sizzle reel (not deployed; see `trailer/README.md`)
 
 ## The apps
 
