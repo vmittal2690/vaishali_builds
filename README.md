@@ -1,6 +1,6 @@
-# Vaishali Builds
+# tinker and wander
 
-The home page for the small apps Vaishali Mittal builds with her daughter and for herself.
+The home page (tinkerandwander.com) for the small apps Vaishali Mittal builds with her daughter and for herself.
 
 - `index.html`: the whole page (no build step)
 - `images/`: app screenshots and the About photo
